@@ -2,23 +2,31 @@
 import HeaderVar from "../components/HeaderVar.vue";
 import TabsViewer from "../components/TabsViewer.vue";
 import WorkSpaces from "../components/WorkSpaces.vue";
-import { cilBriefcase } from "@coreui/icons";
+import { cilBriefcase, cilBookmark } from "@coreui/icons";
 import { ActiveWindow } from "../types/enums";
-import { ref } from "vue";
+import { computed, ref } from "vue";
 
 const tab = ref(ActiveWindow.TABS);
+
+const headerIcon = computed(() => {
+  if (tab.value === ActiveWindow.TABS) return cilBookmark;
+  return cilBookmark;
+});
 
 function cogClicked() {
   if (tab.value === ActiveWindow.TABS) tab.value = ActiveWindow.WORKSPACES;
   else tab.value = ActiveWindow.TABS;
 }
-
-console.log("Hello from the popup!");
 </script>
 
 <template>
   <div class="content">
-    <HeaderVar :icon="cilBriefcase" @icon-click="cogClicked" text="Tabger" />
+    <HeaderVar
+      :key="tab"
+      :icon="tab === ActiveWindow.TABS ? cilBriefcase : cilBookmark"
+      @icon-click="cogClicked"
+      :text="tab"
+    />
     <TabsViewer v-if="tab === ActiveWindow.TABS" />
     <WorkSpaces v-else />
   </div>

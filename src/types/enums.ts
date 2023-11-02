@@ -1,4 +1,4 @@
 export enum ActiveWindow {
-  WORKSPACES,
-  TABS,
+  WORKSPACES = "Workspaces",
+  TABS = "Tabs",
 }
