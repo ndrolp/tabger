@@ -4,14 +4,9 @@ import TabsViewer from "../components/TabsViewer.vue";
 import WorkSpaces from "../components/WorkSpaces.vue";
 import { cilBriefcase, cilBookmark } from "@coreui/icons";
 import { ActiveWindow } from "../types/enums";
-import { computed, ref } from "vue";
+import { ref } from "vue";
 
 const tab = ref(ActiveWindow.TABS);
-
-const headerIcon = computed(() => {
-  if (tab.value === ActiveWindow.TABS) return cilBookmark;
-  return cilBookmark;
-});
 
 function cogClicked() {
   if (tab.value === ActiveWindow.TABS) tab.value = ActiveWindow.WORKSPACES;

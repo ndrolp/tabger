@@ -87,7 +87,7 @@ onMounted(() =>
 }
 
 .tabs-holder .tabs button span {
-  max-width: 40ch;
+  max-width: 45ch;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
