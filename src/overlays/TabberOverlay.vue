@@ -66,11 +66,10 @@ window.addEventListener("keydown", async (event) => {
   </div>
 </template>
 
-<style>
+<style scoped>
 .tabger {
   position: fixed;
   top: 0;
-  height: 100%;
   left: 0;
   padding: 10px;
   width: 100%;
@@ -78,17 +77,18 @@ window.addEventListener("keydown", async (event) => {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   transition: 0.3s;
   box-sizing: border-box;
+  background: #34383b;
+  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.2);
 }
 .tabger .container {
   padding: 10px;
   box-sizing: border-box;
-  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
-  background: #2b2b2b;
+  background: #242729;
 }
 
 .tabger .container input {
   transition: 0.3s;
-  background: #2b2b2b;
+  background: #242729;
   box-sizing: border-box;
   color: white;
   border: 1px solid transparent;
@@ -107,7 +107,7 @@ window.addEventListener("keydown", async (event) => {
 }
 
 .tabger .tabs button {
-  font-size: 0.7rem;
+  font-size: 11pt;
   border: none;
   margin-bottom: 5px;
   background: #242729;
@@ -119,7 +119,6 @@ window.addEventListener("keydown", async (event) => {
   cursor: pointer;
   text-align: left;
   border-radius: 5px;
-  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
 }
 
 .tabger .tabs button img {

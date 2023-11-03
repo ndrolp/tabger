@@ -5,8 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "TARGET=firefox vite",
-    "build_firefox": "TARGET=firefox vue-tsc && TARGET=firefox vite build",
-    "build_chrome": "TARGET=chrome vue-tsc && TARGET=chrome vite build"
+    "build_firefox": "TARGET=firefox vue-tsc --noEmit && TARGET=firefox vite build",
+    "build_chrome": "TARGET=chrome vue-tsc --noEmit && TARGET=chrome vite build"
   },
   "dependencies": {
     "@coreui/icons": "^3.0.1",

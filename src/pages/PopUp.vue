@@ -32,7 +32,6 @@ html,
 body {
   width: 400px;
   height: 500px;
-  background: blue;
   padding: 0;
   margin: 0;
   font-family:

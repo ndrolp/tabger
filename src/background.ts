@@ -16,6 +16,7 @@ browser.runtime.onMessage.addListener((request, sender, sendResponse) => {
   if (request.query === "hello") {
     browser.tabs.query({}).then((instances) => {
       console.log(instances);
+      // @ts-expect-error function no inclure parameters
       sendResponse(instances);
     });
     return true;
