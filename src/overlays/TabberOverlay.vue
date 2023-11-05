@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, ComputedRef, onMounted, ref, Ref } from "vue";
+import { computed, ComputedRef, ref, Ref } from "vue";
 import browser from "webextension-polyfill";
 
 const showSearch = ref(false);
@@ -25,14 +25,12 @@ function focusTab(tab: browser.Tabs.Tab) {
   });
 }
 
-onMounted(async () => {});
-
 window.addEventListener("keydown", async (event) => {
   if (event.key === "F" && event.ctrlKey && event.shiftKey) {
     showSearch.value = !showSearch.value;
     searchText.value = "";
     browser.runtime
-      .sendMessage({ query: "hello" })
+      .sendMessage({ query: "tabs" })
       .then((value) => (tabs.value = value));
   }
   if (event.key === "Escape" && showSearch.value) showSearch.value = false;
