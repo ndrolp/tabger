@@ -1,3 +1,12 @@
 # TabGer
 
-A simple web browser extension to manage your tabs
+This project was created with the purpose to learn how to create multi browser web extensions
+
+# Technologies
+
+| Tools      |
+| ---------- |
+| Nodejs     |
+| Typescript |
+| Vite       |
+| Vuejs      |
