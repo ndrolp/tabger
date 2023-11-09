@@ -1,3 +1,3 @@
-declare module "*.vue" {
-  import vue from "vue";
+declare module '*.vue' {
+    import vue from 'vue'
 }
