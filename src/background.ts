@@ -1,4 +1,5 @@
 import browser from 'webextension-polyfill'
+import TabgerConnection from './Lib/Connection'
 
 browser.runtime.onMessage.addListener((request, _, sendResponse) => {
     // NOTE: This focus a tab
@@ -9,11 +10,7 @@ browser.runtime.onMessage.addListener((request, _, sendResponse) => {
     }
     // NOTE: This fetches all the tabs for the content script
     if (request.query === 'tabs') {
-        browser.tabs.query({ currentWindow: true }).then(instances => {
-            console.log(instances)
-            // @ts-expect-error function no inclure parameters
-            sendResponse(instances)
-        })
+        TabgerConnection.listActiveTabs().then(tabs => sendResponse(tabs))
         return true
     }
 

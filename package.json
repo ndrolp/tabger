@@ -5,6 +5,7 @@
     "type": "module",
     "scripts": {
         "dev": "TARGET=firefox vite",
+        "chrome": "TARGET=chrome vite",
         "build_firefox": "TARGET=firefox vue-tsc --noEmit && TARGET=firefox vite build",
         "build_chrome": "TARGET=chrome vue-tsc --noEmit && TARGET=chrome vite build"
     },

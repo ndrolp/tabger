@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import TabgerConnection from '../Lib/Connection'
 import { computed, ComputedRef, ref, Ref } from 'vue'
 import browser from 'webextension-polyfill'
 
@@ -25,11 +26,11 @@ function focusTab(tab: browser.Tabs.Tab) {
     })
 }
 
-window.addEventListener('keydown', async event => {
+window.addEventListener('keydown', event => {
     if (event.key === 'F' && event.ctrlKey && event.shiftKey) {
         showSearch.value = !showSearch.value
         searchText.value = ''
-        browser.runtime.sendMessage({ query: 'tabs' }).then(value => (tabs.value = value))
+        TabgerConnection.fetchTabsFromWorker().then(tab => (tabs.value = tab))
     }
     if (event.key === 'Escape' && showSearch.value) showSearch.value = false
 
